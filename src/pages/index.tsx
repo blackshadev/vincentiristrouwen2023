@@ -21,9 +21,8 @@ export default function Home() {
 
       <header className='mx-auto max-w-7xl sm:px-6 lg:px-8 py-4'>
         <div className="relative bg-white rounded shadow-lg">
-          <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-            <div className="px-6 pt-10 pb-18 sm:pb-24 lg:col-span-7 lg:px-0 lg:pt-48 lg:pb-44 xl:col-span-6">
-              <div className="mx-auto max-w-2xl lg:mx-0">
+          <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8 items-center lg:min-h-[40rem]">
+            <div className="px-6 py-8 lg:col-span-7 lg:px-0 lg:col-span-6">
                 <h1 className="font-bold tracking-tight">
                     <span className="block text-fuchsia-700 text-4xl sm:text-6xl mb-1">Vincent & Iris</span>
                     <span className="block text-purple-400 text-lg sm:text-xl lg:text-2xl pl-8">Vrijdag, 8 September 2023</span>
@@ -45,20 +44,19 @@ export default function Home() {
                     Learn more <span aria-hidden="true">→</span>
                   </a>
                 </div> */}
-              </div>
             </div>
-            <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+            <div className="relative lg:col-span-5 lg:-mr-8 lg:absolute lg:inset-0 lg:left-1/2 xl:mr-0">
               <Image
-              src={HeaderImage}
-              alt="Vincent & Iris in hun natuurlijke habitat"
-              className='aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full rounded-b lg:rounded-l-none lg:rounded-r'
-            />
+                src={HeaderImage}
+                alt="Vincent & Iris in hun natuurlijke habitat"
+                className='aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full rounded-b lg:rounded-l-none lg:rounded-r'
+              />
             </div>
           </div>
         </div>
       </header>
 
-      <main className='mt-12 mx-auto max-w-6xl sm:px-6 lg:px-8 py-4 mb-6 grid grid-cols-6 lg:grid-cols-12 gap-6'>
+      <main className='mt-12 mx-auto max-w-6xl sm:px-12 py-4 mb-6 grid grid-cols-6 lg:grid-cols-12 gap-6 items-center'>
         <Image src={LocationImage} className="col-span-6 rounded hidden lg:block" alt="Een impressie van de trouw locatie van Iris en Vincent"/>
         <div className='col-span-6 mt-4'>
           <section className="mb-10">
