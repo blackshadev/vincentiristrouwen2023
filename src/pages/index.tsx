@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Vincent & Iris trouwen 2023</title>
-        <meta name="description" content="Vincent en iris trouwen 2023" />
+        <title>Iris & Vincent trouwen 2023</title>
+        <meta name="description" content="Iris en vincent trouwen 2023" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

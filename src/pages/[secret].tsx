@@ -11,9 +11,9 @@ export default function SecretPage({ schedule }: PageProps) {
   return (
     <>
       <Head>
-        <title>Vincent & Iris trouwen 2023</title>
+        <title>Iris & Vincent trouwen 2023</title>
         <meta name="robots" content="noindex,nofollow" />
-        <meta name="description" content="Vincent en iris trouwen 2023" />
+        <meta name="description" content="Iris en vincent trouwen 2023" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -44,7 +44,6 @@ function parseSchedule(schedule: string): ScheduleProps {
 }
 
 export async function getStaticProps({ params }: PageParams): Promise<{ props: PageProps } | { redirect: { destination: string, permanent: boolean } }> {
-
   if (!process.env.ALL_DAY_SECRET) {
     throw new Error("Missing env var ALL_DAY_SECRET");
   }
@@ -77,10 +76,10 @@ export async function getStaticProps({ params }: PageParams): Promise<{ props: P
 
 
 export async function getStaticPaths(): Promise<{ paths: PageParams[], fallback: boolean | 'blocking' }> {
-
   if (!process.env.ALL_DAY_SECRET) {
     throw new Error("Missing env var ALL_DAY_SECRET");
   }
+
   if (!process.env.NIGHT_ONLY_SECRET) {
     throw new Error("Missing env var NIGHT_ONLY_SECRET");
   }

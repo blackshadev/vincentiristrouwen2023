@@ -9,7 +9,7 @@ export default function LocationWithDate() {
         <section className="mb-10">
           <h2 className='text-fuchsia-700 text-2xl sm:text-4xl mb-2'>Wanneer</h2>
           <p>
-            Op <b>Vrijdag, 8 September 2023</b> gaan Vincent Hagen en Iris van Marwijk trouwen.
+            Op <b>Vrijdag, 8 September 2023</b> gaan Iris van Marwijk en Vincent Hagen trouwen.
           </p>
         </section>
         <section>
