@@ -1,4 +1,5 @@
 import classNames from "@/helpers/classNames";
+import { SectionTitle } from "../atoms/SectionTitle";
 
 export type ScheduleProps = {
   time: string;
@@ -16,9 +17,9 @@ type Props = {
 export default function Schedule({ schedule, className }: Props) {
   return (
     <section className={classNames(className, "grid")}>
-      <h2 className="text-fuchsia-700 text-2xl sm:text-4xl mb-2 text-center">
+      <SectionTitle className="text-center">
         De planning voor <time dateTime={date}>8 September 2023</time>
-      </h2>
+      </SectionTitle>
       <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
         {schedule.map(({ time, description }) => (
           <li key={time} className="group w-full space-x-4 rounded-xl px-4">

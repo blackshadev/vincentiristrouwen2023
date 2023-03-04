@@ -1,14 +1,7 @@
 import classNames from "@/helpers/classNames";
 import { PropsWithChildren } from "react";
-type Props = React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->;
-export default function ButtonLink({
-  children,
-  className,
-  ...props
-}: PropsWithChildren<Props>) {
+type Props = React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+export default function ButtonLink({ children, className, ...props }: PropsWithChildren<Props>) {
   return (
     <a
       className={classNames(

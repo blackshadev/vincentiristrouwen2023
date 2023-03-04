@@ -1,4 +1,5 @@
 import LocationWithDate from "@/components/molecules/LocationWithDate";
+import RSVPForm from "@/components/molecules/RSVPForm";
 import Schedule, { ScheduleProps } from "@/components/molecules/Schedule";
 import WeddingHeader from "@/components/molecules/WeddingHeader";
 import Head from "next/head";
@@ -29,10 +30,8 @@ export default function SecretPage({ schedule }: PageProps) {
 
         <LocationWithDate className="mt-12 mx-auto max-w-6xl sm:px-12 py-4 mb-6 " />
 
-        <Schedule
-          className="mt-12 mx-auto max-w-6xl sm:px-12 py-4"
-          schedule={schedule}
-        />
+        <Schedule className="mt-12 mx-auto max-w-6xl sm:px-12 py-4" schedule={schedule} />
+
       </main>
     </>
   );
@@ -54,10 +53,7 @@ function parseSchedule(schedule: string): ScheduleProps {
 
 export async function getStaticProps({
   params,
-}: PageParams): Promise<
-  | { props: PageProps }
-  | { redirect: { destination: string; permanent: boolean } }
-> {
+}: PageParams): Promise<{ props: PageProps } | { redirect: { destination: string; permanent: boolean } }> {
   if (!process.env.ALL_DAY_SECRET) {
     throw new Error("Missing env var ALL_DAY_SECRET");
   }
@@ -111,10 +107,7 @@ export async function getStaticPaths(): Promise<{
   }
 
   return {
-    paths: [
-      { params: { secret: process.env.ALL_DAY_SECRET } },
-      { params: { secret: process.env.NIGHT_ONLY_SECRET } },
-    ],
+    paths: [{ params: { secret: process.env.ALL_DAY_SECRET } }, { params: { secret: process.env.NIGHT_ONLY_SECRET } }],
     fallback: "blocking",
   };
 }
