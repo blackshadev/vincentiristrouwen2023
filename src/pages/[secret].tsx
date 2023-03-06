@@ -1,20 +1,16 @@
-import LocationWithDate from "@/components/molecules/LocationWithDate";
-import RSVPForm from "@/components/molecules/RSVPForm";
-import Schedule, { ScheduleProps } from "@/components/molecules/Schedule";
-import WeddingHeader from "@/components/molecules/WeddingHeader";
+import LocationWithDate from "@/components/organisms/LocationWithDate";
+import RSVPForm from "@/components/organisms/RSVPForms/RsvpForm";
+import Schedule, { ScheduleProps } from "@/components/organisms/Schedule";
+import WeddingHeader from "@/components/organisms/WeddingHeader";
+import { GuestType } from "@/types/GuestType";
 import Head from "next/head";
-
-enum GuestType {
-  AllDay,
-  OnlyNight,
-}
 
 type PageProps = {
   schedule: ScheduleProps;
   type: GuestType;
 };
 
-export default function SecretPage({ schedule }: PageProps) {
+export default function SecretPage({ schedule, type }: PageProps) {
   return (
     <>
       <Head>
@@ -32,6 +28,7 @@ export default function SecretPage({ schedule }: PageProps) {
 
         <Schedule className="mt-12 mx-auto max-w-6xl sm:px-12 py-4" schedule={schedule} />
 
+        <RSVPForm type={type} className="mt-12 mx-auto max-w-6xl sm:px-12 py-4" />
       </main>
     </>
   );

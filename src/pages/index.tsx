@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import WeddingHeader from "@/components/molecules/WeddingHeader";
+import WeddingHeader from "@/components/organisms/WeddingHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
