@@ -2,14 +2,12 @@ import FormInput from "@/components/molecules/FormInput";
 import { GuestType } from "@/types/GuestType";
 import BaseRSVPForm from "./BaseRSVPForm";
 
-type Props = {
-  className: string;
-};
+type Props = {};
 
-export default function OnlyNightRSVPForm({ className }: Props) {
+export default function OnlyNightRSVPForm({}: Props) {
   const formId = 'rsvp';
 
-  return <BaseRSVPForm className={className} formId={formId} type={GuestType.OnlyNight}>
-    <FormInput formId={formId} name="naam" label="Naam" placeholder="Vincent Hagen & Iris van Marwijk" className="mb-8" />
+  return <BaseRSVPForm formId={formId} type={GuestType.OnlyNight}>
+    <FormInput formId={formId} name="naam" label="Naam" placeholder="Vincent Hagen" className="mb-8" required />
   </BaseRSVPForm>;
 }

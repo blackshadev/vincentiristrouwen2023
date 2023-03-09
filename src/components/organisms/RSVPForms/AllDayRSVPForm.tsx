@@ -4,15 +4,13 @@ import FormTextarea from "@/components/molecules/FormTextarea";
 import { GuestType } from "@/types/GuestType";
 import BaseRSVPForm from "./BaseRSVPForm";
 
-type Props = {
-  className: string;
-};
+type Props = {};
 
-export default function AllDayRSVPForm({ className }: Props) {
+export default function AllDayRSVPForm({ }: Props) {
   const formId = 'rsvp';
 
-  return <BaseRSVPForm className={className} formId={formId} type={GuestType.AllDay}>
-    <FormInput formId={formId} name="naam" label="Naam" placeholder="Vincent Hagen & Iris van Marwijk" className="mb-8" />
+  return <BaseRSVPForm formId={formId} type={GuestType.AllDay}>
+    <FormInput formId={formId} name="naam" label="Naam" placeholder="Vincent Hagen" className="mb-8" required />
     <FormSelect 
       formId={formId}
       placeholder="Hoofd menu - met bijgerecht"
