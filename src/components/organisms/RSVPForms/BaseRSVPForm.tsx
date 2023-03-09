@@ -17,7 +17,10 @@ function translateGuestType(type: GuestType): string {
 }
 
 export default function BaseRSVPForm({ type, children }: PropsWithChildren<Props>) {
-  return <form name="rsvp" data-netlify="true">
+  const formName = `rsvp_${GuestType[type]}`;
+
+  return <form method="POST" name={formName} data-netlify="true">
+      <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="type" value={translateGuestType(type)} />
 
       {children}
