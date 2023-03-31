@@ -19,7 +19,7 @@ export default function WeddingHeader({ className }: Props) {
               </span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 pl-6">
-              Op deze website vindt je alle informatie over de trouwerij van deze gekken mensen.
+              Op deze website vindt je alle informatie over de trouwerij van deze gekke mensen.
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600 pl-6">Ben jij uitgenodigd en erbij?</p>
           </div>
