@@ -1,4 +1,5 @@
 import LocationWithDate from "@/components/organisms/LocationWithDate";
+import PresentSection from "@/components/organisms/PresentSection";
 import RSVPForm from "@/components/organisms/RSVPForms/RsvpForm";
 import Schedule, { ScheduleProps } from "@/components/organisms/Schedule";
 import WeddingHeader from "@/components/organisms/WeddingHeader";
@@ -8,9 +9,10 @@ import Head from "next/head";
 type PageProps = {
   schedule: ScheduleProps;
   type: GuestType;
+  presentUrl: string;
 };
 
-export default function SecretPage({ schedule, type }: PageProps) {
+export default function SecretPage({ schedule, type, presentUrl }: PageProps) {
   return (
     <>
       <Head>
@@ -21,7 +23,7 @@ export default function SecretPage({ schedule, type }: PageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="px-2 pb-10">
+      <main className="px-2 pb-24">
         <WeddingHeader className="mx-auto max-w-7xl sm:px-6 lg:px-8 py-4" />
 
         <LocationWithDate className="mt-12 mx-auto max-w-6xl sm:px-12 py-4 mb-6 " />
@@ -29,6 +31,8 @@ export default function SecretPage({ schedule, type }: PageProps) {
         <Schedule className="mt-12 mx-auto max-w-6xl sm:px-12 py-4" schedule={schedule} />
 
         <RSVPForm type={type} className="mt-12 mx-auto max-w-6xl sm:px-12 py-4" />
+
+        <PresentSection className="mt-12 mx-auto max-w-6xl sm:px-12 py-4" url={presentUrl} />
       </main>
     </>
   );
@@ -70,6 +74,7 @@ export async function getStaticProps({
       props: {
         schedule: parseSchedule(process.env.ALL_DAY_SCHEDULE),
         type: GuestType.AllDay,
+        presentUrl: process.env.PRESENT_URL ?? '',
       },
     };
   }
@@ -79,6 +84,7 @@ export async function getStaticProps({
       props: {
         schedule: parseSchedule(process.env.NIGHT_ONLY_SCHEDULE),
         type: GuestType.OnlyNight,
+        presentUrl: process.env.PRESENT_URL ?? '',
       },
     };
   }
