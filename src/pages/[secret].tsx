@@ -69,7 +69,7 @@ export async function getStaticProps({
     throw new Error("Missing env var NIGHT_ONLY_SCHEDULE");
   }
 
-  if (params.secret === process.env.ALL_DAY_SECRET) {
+  if (process.env.ALL_DAY_SECRET.split(',').includes(params.secret)) {
     return {
       props: {
         schedule: parseSchedule(process.env.ALL_DAY_SCHEDULE),
@@ -79,7 +79,7 @@ export async function getStaticProps({
     };
   }
 
-  if (params.secret === process.env.NIGHT_ONLY_SECRET) {
+  if (process.env.NIGHT_ONLY_SECRET.split(',').includes(params.secret)) {
     return {
       props: {
         schedule: parseSchedule(process.env.NIGHT_ONLY_SCHEDULE),
@@ -110,7 +110,10 @@ export async function getStaticPaths(): Promise<{
   }
 
   return {
-    paths: [{ params: { secret: process.env.ALL_DAY_SECRET } }, { params: { secret: process.env.NIGHT_ONLY_SECRET } }],
+    paths: [
+      ...process.env.ALL_DAY_SECRET.split(',').map(code => ({ params: { secret: code } })), 
+      ...process.env.NIGHT_ONLY_SECRET.split(',').map(code => ({ params: { secret: code } })), 
+    ],
     fallback: "blocking",
   };
 }
