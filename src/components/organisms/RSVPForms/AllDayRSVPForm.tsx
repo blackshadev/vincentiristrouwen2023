@@ -17,7 +17,7 @@ export default function AllDayRSVPForm({ }: Props) {
       values={[
         "Diamanthaas - met vanille portsaus en aardappel uit de oven",
         "Kabeljauw filet - met mosterd beurre blanc en aardappel crème",
-        "Risotto - met asperges, Black Bussumer oude kaas en lente ui",
+        "Risotto - met gegrilde groentes, Black Bussumer oude kaas en lente ui",
       ]}
       name="menu_keuze" 
       label="Hoofd menu keuze" 
